@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>엄마랑 (HOMMARANG) - 시간을 잇는 아름다움</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&family=Noto+Serif+KR:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #5D4037; /* 짙은 갈색 (텍스트) */
+            --accent-color: #D7CCC8; /* 연한 베이지 (포인트) */
+            --bg-color: #FDFBF7; /* 한지 느낌의 미색 배경 */
+            --tech-bg: #EFEBE9; /* 기술 섹션 배경 */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            line-height: 1.8;
+            word-break: keep-all;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Noto Serif KR', serif;
+        }
+
+        /* 유틸리티 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .text-center { text-align: center; }
+        .mt-50 { margin-top: 50px; }
+        .mb-50 { margin-bottom: 50px; }
+
+        /* 헤더 */
+        header {
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        /* 메인 비주얼 (히어로 섹션) */
+        .hero {
+            position: relative;
+            height: 60vh;
+            background-color: #ddd;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+        .hero-text {
+            position: absolute;
+            text-align: center;
+            color: white;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            z-index: 2;
+        }
+        .hero-text h2 {
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        .hero-text p {
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* 섹션 공통 */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 40px;
+            height: 1px;
+            background: var(--primary-color);
+            margin: 15px auto 0;
+        }
+
+        /* Prologue */
+        .prologue p {
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 20px;
+        }
+
+        /* Heritage (Grid) */
+        .heritage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .heritage-item {
+            text-align: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+        }
+        .heritage-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        /* Technology (NADES) */
+        .tech-section {
+            background-color: var(--tech-bg);
+            border-radius: 20px;
+            padding: 60px 40px;
+        }
+        .tech-box {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+        }
+        .tech-highlight {
+            color: #8D6E63;
+            font-weight: 700;
+        }
+        .tech-list {
+            list-style: none;
+            margin-top: 20px;
+            text-align: left;
+            display: inline-block;
+        }
+        .tech-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .tech-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #8D6E63;
+        }
+
+        /* Footer */
+        footer {
+            background: #3E2723;
+            color: #D7CCC8;
+            padding: 40px 0;
+            font-size: 0.9rem;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .hero-text h2 { font-size: 1.8rem; }
+            section { padding: 50px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">HOMMARANG</div>
+        </div>
+    </header>
+
+    <div class="hero">
+        <img src="엄마랑4.png" alt="엄마와 딸이 맞잡은 손"> 
+        <div class="hero-text">
+            <h2>시간을 잇고,<br>사랑을 빚다.</h2>
+            <p>엄마와 딸이 함께 쓰는 모던 헤리티지 스킨케어</p>
+        </div>
+    </div>
+
+    <section class="prologue text-center">
+        <div class="container">
+            <h3 class="section-title">Prologue</h3>
+            <p>
+                어느새 거칠어진 엄마의 손,<br>
+                그리고 그 손을 맞잡은 나의 손.
+            </p>
+            <p>
+                <strong>'엄마랑'</strong>은 그 따뜻한 맞잡음에서 시작되었습니다.<br>
+                엄마에게는 깊은 영양을, 딸에게는 순수한 휴식을.<br>
+                서로 다른 시간을 살아가는 우리가 가장 아름답게 만나는 곳입니다.
+            </p>
+        </div>
+    </section>
+
+    <section class="heritage text-center">
+        <div class="container">
+            <h3 class="section-title">Korean Heritage</h3>
+            <p>한국의 흙과 바람이 키운 전통 원료를 담았습니다.</p>
+            
+            <div class="heritage-grid">
+                <div class="heritage-item">
+                    <span class="heritage-icon">🌿</span>
+                    <h4>보음제</h4>
+                    <p>강인한 생명력으로<br>피부를 진정시킵니다.</p>
+                </div>
+                <div class="heritage-item">
+                    <span class="heritage-icon">🌾</span>
+                    <h4>보양제제</h4>
+                    <p>맑은 햇살을 머금어<br>투명한 광채를 선사합니다.</p>
+                </div>
+                <div class="heritage-item">
+                    <span class="heritage-icon">🌺</span>
+                    <h4>인삼</h4>
+                    <p>천 년의 지혜로<br>세월의 흔적을 케어합니다.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="text-center">
+        <div class="container">
+            <div class="tech-section">
+                <h3 class="section-title">Signature Technology</h3>
+                <h4>Natural Deep Eutectic System</h4>
+                <p class="mt-50">
+                    전통 원료의 효능을 파괴 없이 온전히 전달하기 위해,<br>
+                    <strong>친환경 내추럴 딥 유테틱 공법</strong>을 고집합니다.
+                </p>
+
+                <div class="tech-box">
+                    <p>
+                        "끓이지 않습니다. 화학 용매를 쓰지 않습니다."<br><br>
+                        자연 유래 성분으로 만든 <span class="tech-highlight">꿈의 용매</span>를 사용하여<br>
+                        식물의 유효 성분을 고순도로 추출해냅니다.<br>
+                        피부에 닿는 순간, 자연 그대로의 생명력이 깊고 빠르게 스며듭니다.
+                    </p>
+                    <ul class="tech-list">
+                        <li><strong>More Potent:</strong> 더 진한 고농축 유효 성분</li>
+                        <li><strong>More Safe:</strong> 피부 자극 최소화</li>
+                        <li><strong>More Eco:</strong> 지구를 생각하는 친환경 공정</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="promise text-center">
+        <div class="container">
+            <h3 class="section-title">Our Promise</h3>
+            <p class="mb-50">
+                가장 한국적인 것이 가장 세계적인 것이듯,<br>
+                가장 자연스러운 것이 가장 아름다운 것입니다.<br><br>
+                화려한 플라스틱 대신 정성스러운 <strong>보자기 매듭</strong>으로<br>
+                엄마와 딸의 소중한 마음을 감싸 안습니다.
+            </p>
+            <h4>가장 한국적인 웰니스,<br>엄마랑 (HOMMARANG)</h4>
+        </div>
+    </section>
+
+    <footer class="text-center">
+        <div class="container">
+            <p>&copy; 2024 HOMMARANG. All rights reserved.</p>
+            <p>Designed for Mom & Daughter</p>
+        </div>
+    </footer>
+
+</body>
+</html>
