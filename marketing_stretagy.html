@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>엄마랑(HOMMARANG) 마케팅 전략 기획안</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #4E342E;       /* 진한 갈색 (텍스트) */
+            --secondary: #8D6E63;     /* 중간 갈색 (강조) */
+            --accent: #D7CCC8;        /* 연한 베이지 (배경 포인트) */
+            --bg: #FDFBF7;            /* 한지 느낌 배경 */
+            --white: #FFFFFF;
+            --border: #E0E0E0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: var(--bg);
+            color: var(--primary);
+            line-height: 1.6;
+            word-break: keep-all;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 50px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-radius: 8px;
+        }
+
+        /* 타이틀 섹션 */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 30px;
+        }
+        h1 {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        .subtitle {
+            color: var(--secondary);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* 섹션 공통 */
+        section {
+            margin-bottom: 50px;
+        }
+        h2 {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 1.5rem;
+            border-left: 5px solid var(--secondary);
+            padding-left: 15px;
+            margin-bottom: 25px;
+            background: linear-gradient(to right, var(--bg), transparent);
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+        h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* 1. Identity Box */
+        .identity-box {
+            background-color: var(--bg);
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid var(--accent);
+        }
+        .identity-list li {
+            margin-bottom: 10px;
+            list-style: none;
+            padding-left: 20px;
+            position: relative;
+        }
+        .identity-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+        }
+
+        /* 2. Target Grid */
+        .target-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .target-card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .target-header {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+            color: var(--secondary);
+        }
+        
+        /* 3. Tech Box */
+        .tech-box {
+            background-color: #EFEBE9;
+            padding: 25px;
+            border-radius: 8px;
+        }
+        .tech-highlight {
+            color: #D84315; /* 강조색 */
+            font-weight: 700;
+        }
+
+        /* 4. 4P Grid */
+        .strategy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .strategy-card {
+            background: var(--white);
+            border: 1px solid var(--accent);
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.2s;
+        }
+        .strategy-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .strategy-title {
+            font-family: 'Noto Serif KR', serif;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+            display: flex;
+            align-items: center;
+        }
+        .strategy-icon {
+            margin-right: 8px;
+            font-size: 1.4rem;
+        }
+        .strategy-content ul {
+            padding-left: 20px;
+        }
+        .strategy-content li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        /* 5. Summary */
+        .summary {
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            font-family: 'Noto Serif KR', serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            position: relative;
+        }
+        .summary::before {
+            content: '"';
+            font-size: 4rem;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+            font-family: serif;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        /* 반응형 */
+        @media (max-width: 768px) {
+            .container { padding: 30px 20px; }
+            .target-grid, .strategy-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>엄마랑 (HOMMARANG)</h1>
+            <div class="subtitle">프리미엄 비건 한방 스킨케어 마케팅 전략 기획안</div>
+        </header>
+
+        <section>
+            <h2>1. 브랜드 정체성 (Brand Identity)</h2>
+            <div class="identity-box">
+                <ul class="identity-list">
+                    <li><strong>포지셔닝:</strong> 세대를 잇는 '프리미엄 비건 모던 한방 스킨케어'</li>
+                    <li><strong>슬로건:</strong> "시간을 잇는 아름다움, 엄마랑" (Mom's Wisdom x Daughter's Sense)</li>
+                    <li><strong>핵심 가치:</strong>
+                        <br>- <strong>Connection:</strong> 엄마와 딸의 정서적 교감
+                        <br>- <strong>Modern Heritage:</strong> 2030 감성으로 재해석한 힙한 전통
+                        <br>- <strong>Clean Efficacy:</strong> 전통 원료 + 첨단 친환경 공법(NADES)
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>2. 타겟팅 전략 (Dual Targeting)</h2>
+            <div class="target-grid">
+                <div class="target-card">
+                    <div class="target-header">구매자 (Buyer): 2030 딸</div>
+                    <p><strong>심리:</strong> 엄마에게 좋은 선물을 하고 싶지만 올드한 건 싫음. 성분(비건) 중시.</p>
+                    <p style="margin-top:10px;"><strong>소구점:</strong> <br>"엄마 화장대도 이제 예뻐져야 해"<br>"내가 써도 좋은 순한 성분"</p>
+                </div>
+                <div class="target-card">
+                    <div class="target-header">사용자 (User): 5060 엄마</div>
+                    <p><strong>심리:</strong> 확실한 효능(보습/탄력) 선호. 자녀가 준 선물을 자랑하고 싶음.</p>
+                    <p style="margin-top:10px;"><strong>소구점:</strong> <br>"딸이 골라준 요즘 명품 화장품"<br>"진하게 달여낸 영양"</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. 핵심 기술 마케팅 (Tech Storytelling)</h2>
+            <div class="tech-box">
+                <h3>Natural Deep Eutectic System (NADES)</h3>
+                <p style="margin-bottom: 15px;">친환경 천연 저융점 용매 추출법</p>
+                <ul>
+                    <li><strong>High Potency:</strong> 끓이지 않아 파괴되지 않은 <span class="tech-highlight">원물의 영양 그대로</span></li>
+                    <li><strong>Clean & Safe:</strong> 화학 용매 대신 식물성 성분 사용, <span class="tech-highlight">피부 자극 0%</span></li>
+                    <li><strong>Absorbency:</strong> 피부 친화적 용매로 겉돌지 않고 <span class="tech-highlight">깊숙이 침투</span></li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <h2>4. 4P 믹스 전략 (Action Plan)</h2>
+            <div class="strategy-grid">
+                <div class="strategy-card">
+                    <div class="strategy-title"><span class="strategy-icon">🌿</span> Product (제품)</div>
+                    <div class="strategy-content">
+                        <ul>
+                            <li><strong>디자인:</strong> 달항아리(Moon Jar) 미니멀 용기 + 소색 톤</li>
+                            <li><strong>패키징:</strong> 비닐 대신 '모던 보자기 매듭' (친환경+격식)</li>
+                            <li><strong>네이밍:</strong> 영문/국문 병기 (예: Artemisia Calming)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-title"><span class="strategy-icon">🏷️</span> Price (가격)</div>
+                    <div class="strategy-content">
+                        <ul>
+                            <li><strong>모녀 세트 전략:</strong> 단품보다 세트 판매 주력</li>
+                            <li><strong>구성:</strong> 대용량(엄마용) + 소용량(딸 파우치용)</li>
+                            <li><strong>메시지:</strong> "하나는 엄마 화장대에, 하나는 내 가방에"</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-title"><span class="strategy-icon">📍</span> Place (유통)</div>
+                    <div class="strategy-content">
+                        <ul>
+                            <li><strong>카카오톡 선물하기:</strong> '생신 선물', '첫 월급' 키워드 선점</li>
+                            <li><strong>팝업 스토어:</strong> 북촌/서촌 등 한국적 핫플레이스</li>
+                            <li><strong>체험존:</strong> 모녀 데이트 코스 (티타임 + 핸드마사지)</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="strategy-card">
+                    <div class="strategy-title"><span class="strategy-icon">📢</span> Promotion (홍보)</div>
+                    <div class="strategy-content">
+                        <ul>
+                            <li><strong>SNS 캠페인:</strong> #엄마랑챌린지 (손 잡기, 거울샷 인증)</li>
+                            <li><strong>인플루언서:</strong> 실제 모녀 관계 유튜버 섭외 및 리뷰</li>
+                            <li><strong>콘텐츠:</strong> 텍스처, 자연 원물, 따뜻한 일상 강조</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="summary">
+                전통 한방의 효능을 <strong>첨단 친환경 기술(NADES)</strong>로 재해석하고,<br>
+                <strong>'모녀가 함께 공유하는 뷰티 루틴'</strong>이라는 감성 스토리를 입혀<br>
+                2030 타겟의 <strong>카카오톡 선물하기 시장</strong>을 선점합니다.
+            </div>
+        </section>
+
+        <footer>
+            &copy; 2025 HOMMARANG Marketing Strategy Proposal.
+        </footer>
+    </div>
+
+</body>
+</html>
