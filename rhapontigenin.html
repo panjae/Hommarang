@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>고순도 라폰티게닌 보고서</title>
+    <style>
+        /* 기본 설정 (PC/Mobile 공통) */
+        :root {
+            --primary-color: #27ae60;
+            --dark-color: #1a3c34;
+            --bg-color: #f4f6f8;
+            --text-color: #333;
+        }
+        
+        body {
+            font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0; /* 모바일에서 불필요한 여백 제거 */
+            -webkit-text-size-adjust: 100%; /* 아이폰 폰트 크기 자동조절 방지 */
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        /* 모바일 최적화 미디어 쿼리 */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 20px 15px; /* 좌우 여백 축소 */
+                width: 100%;
+                box-sizing: border-box;
+                border-radius: 0;
+                box-shadow: none;
+            }
+            h1 {
+                font-size: 1.6em !important; /* 제목 크기 조정 */
+                margin-bottom: 30px !important;
+            }
+            h2 {
+                font-size: 1.3em !important;
+                margin-top: 40px !important;
+            }
+            .market-box {
+                flex-direction: column; /* 카드를 세로로 배치 */
+            }
+            th, td {
+                padding: 10px !important;
+                font-size: 0.9em !important;
+                word-break: keep-all; /* 단어 중간 끊김 방지 */
+            }
+            .highlight {
+                font-size: 1em !important;
+                padding: 15px !important;
+            }
+        }
+
+        h1 {
+            color: var(--dark-color);
+            text-align: center;
+            border-bottom: 3px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 50px;
+            font-size: 2.2em;
+            word-break: keep-all;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            border-left: 5px solid var(--primary-color);
+            padding-left: 12px;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 1.5em;
+        }
+
+        h3 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            display: inline-block;
+            border-bottom: 1px dashed #ddd;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #444;
+        }
+
+        /* 표 스크롤 래퍼 (모바일에서 표가 잘리지 않게 함) */
+        .table-wrapper {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin-bottom: 20px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.95em;
+            background-color: #fff;
+            min-width: 500px; /* 표의 최소 너비 설정 (스크롤 유도) */
+        }
+
+        th, td {
+            border-bottom: 1px solid #e0e0e0;
+            padding: 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            color: var(--dark-color);
+            font-weight: bold;
+            text-align: center;
+            white-space: nowrap; /* 제목 줄바꿈 방지 */
+        }
+
+        .highlight {
+            background-color: #e8f8f5;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #d1f2eb;
+            font-weight: bold;
+            color: #0e6655;
+            text-align: center;
+            margin: 30px 0;
+            font-size: 1.1em;
+            line-height: 1.5;
+        }
+
+        .market-box {
+            display: flex;
+            justify-content: space-between;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .market-card {
+            flex: 1;
+            background: #fff;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .market-card h4 {
+            margin-top: 0;
+            color: #e67e22;
+            font-size: 1.1em;
+            margin-bottom: 10px;
+        }
+
+        .market-card p {
+            font-size: 0.9em;
+            margin: 0;
+            color: #666;
+        }
+
+        .note {
+            background-color: #fff9e6;
+            padding: 15px;
+            border-left: 4px solid #f1c40f;
+            margin: 20px 0;
+            font-size: 0.95em;
+            color: #7f6000;
+            border-radius: 0 5px 5px 0;
+        }
+
+        ul, ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 6px;
+            background-color: #e74c3c;
+            color: white;
+            border-radius: 4px;
+            font-size: 0.7em;
+            vertical-align: middle;
+            margin-left: 5px;
+            font-weight: bold;
+        }
+
+        .footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #999;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        
+        /* 참고문헌 박스 */
+        .ref-box {
+            background-color: #f8f9fa; 
+            padding: 15px 20px; 
+            border-radius: 8px; 
+            font-size: 0.9em; 
+            border: 1px solid #eee;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>고순도 라폰티게닌<br><span style="font-size:0.5em; color:#7f8c8d; font-weight:normal; display:block; margin-top:10px;">The Next Generation Phyto-Retinol</span></h1>
+
+    <div class="section">
+        <p>본 보고서는 종대황 유래 성분을 친환경 공법으로 전환하여, 부작용(설사 유발 등) 성분이 제거된 <strong>고순도 라폰티게닌(98% 이상)</strong>을 고기능성 화장품 원료로 사업화하기 위한 전략 보고서입니다.</p>
+    </div>
+
+    <h2>1. 친환경 제조 공정 (Technology)</h2>
+    <p>기존의 강산(HCl) 방식을 탈피하고, 피부 친화적인 <strong>NADES(Natural Deep Eutectic Solvents)</strong>를 이용한 그린 바이오 컨버전 기술을 적용합니다.</p>
+    
+    <h3>핵심 NADES 조성</h3>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>성분</th>
+                    <th>비율</th>
+                    <th>역할</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Choline Chloride</strong></td>
+                    <td>1</td>
+                    <td>안정화, 침투 촉진</td>
+                </tr>
+                <tr>
+                    <td><strong>Lactic Acid (젖산)</strong></td>
+                    <td>2</td>
+                    <td><strong>반응 촉매</strong>, 보습 효과</td>
+                </tr>
+                <tr>
+                    <td><strong>Water</strong></td>
+                    <td>10~20%</td>
+                    <td>점도 조절</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="note">
+        <strong>💡 핵심 기술:</strong> 
+        라폰티신(배당체)을 위 용매에서 70~80℃ 반응 시, 활성형인 <strong>라폰티게닌</strong>으로 95% 이상 전환됩니다.
+    </div>
+
+    <h2>2. 원가 및 목표 스펙</h2>
+    
+    <h3>품질 규격</h3>
+    <ul>
+        <li><strong>순도(HPLC):</strong> Rhapontigenin <strong>98.0% 이상</strong></li>
+        <li><strong>유해물질:</strong> 안트라퀴논(설사유발) <strong>불검출 (N.D.)</strong></li>
+    </ul>
+
+    <h3>경제성 분석 (1kg 기준)</h3>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>항목</th>
+                    <th>비용 (KRW)</th>
+                    <th>비고</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>원재료비</td>
+                    <td>1,200,000</td>
+                    <td>원물 + 용매</td>
+                </tr>
+                <tr>
+                    <td>가공비</td>
+                    <td>1,100,000</td>
+                    <td>인건비 포함</td>
+                </tr>
+                <tr>
+                    <td><strong>제조원가</strong></td>
+                    <td><strong>2,300,000</strong></td>
+                    <td>kg당 단가</td>
+                </tr>
+                <tr>
+                    <td><strong>판매가</strong></td>
+                    <td><strong>5,000,000 ↑</strong></td>
+                    <td>고부가 소재</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>3. 효능 기전 (Mechanism)</h2>
+    <p>유전자 레벨에서 피부를 재생하고 보호하는 <strong>이중 타겟(Dual Target)</strong> 메커니즘입니다.</p>
+
+    <ul>
+        <li><strong>콜라겐 생성 (ERβ Agonist):</strong><br>진피층 수용체 자극 → <strong>프로콜라겐 합성 촉진</strong> (피부 두께 증가)</li>
+        <li><strong>광노화 방어 (MMP Inhibition):</strong><br>자외선에 의한 활성산소 제거 → <strong>콜라겐 분해 효소 차단</strong></li>
+        <li><strong>강력 미백 (Whitening):</strong><br>알부틴보다 강력한 <strong>티로시나아제 억제</strong> 효과</li>
+    </ul>
+
+    <h2>4. 시장 트렌드 분석</h2>
+    <div class="market-box">
+        <div class="market-card">
+            <h4>📈 Clean-ical</h4>
+            <p>과학적으로 효능이 검증된 고순도 천연 성분을 선호하는 트렌드에 부합합니다.</p>
+        </div>
+        <div class="market-card">
+            <h4>🌿 Post-Retinol</h4>
+            <p>자극적인 레티놀을 대체할 '식물성 레티놀(바쿠치올 등)' 시장의 차세대 주자입니다.</p>
+        </div>
+        <div class="market-card">
+            <h4>⏳ Slow Aging</h4>
+            <p>낮에도 바를 수 있는 안티에이징 제품을 원하는 2030 세대를 공략합니다.</p>
+        </div>
+    </div>
+
+    <h2>5. 경쟁 소재 비교</h2>
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>구분</th>
+                    <th>라폰티게닌</th>
+                    <th>레티놀</th>
+                    <th>바쿠치올</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>포지셔닝</strong></td>
+                    <td><strong>미백+재생</strong></td>
+                    <td>강력 주름개선</td>
+                    <td>저자극 재생</td>
+                </tr>
+                <tr>
+                    <td><strong>자극도</strong></td>
+                    <td><strong>없음 (진정)</strong></td>
+                    <td>높음 (따가움)</td>
+                    <td>낮음</td>
+                </tr>
+                <tr>
+                    <td><strong>사용시간</strong></td>
+                    <td><strong>낮/밤</strong></td>
+                    <td>밤 전용</td>
+                    <td>낮/밤</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>6. 마케팅 전략</h2>
+
+    <div class="highlight">
+        "Beyond Retinol,<br>The Whitening Phyto-Activator"
+    </div>
+
+    <h3>가이드라인</h3>
+    <ul>
+        <li><strong>추천 제품:</strong> 민감성 안티에이징 앰플, 기미 크림</li>
+        <li><strong>권장 함량:</strong> 0.01% ~ 0.05% (100 ~ 500 ppm)</li>
+        <li><strong>제형 팁:</strong> 폴리올(BG, DPG)에 먼저 녹인 후 투입 권장</li>
+    </ul>
+
+    <h2>7. 주요 근거 논문</h2>
+    <div class="ref-box">
+        <ol>
+            <li><strong>[광노화]</strong> Lim, T. G., et al. (2013). <em>J. Photochem. Photobiol. B</em> (자외선 유도 MMP-1 억제)</li>
+            <li><strong>[미백]</strong> Cui, Y., et al. (2015). <em>Bioorg. Med. Chem. Lett.</em> (티로시나아제 억제)</li>
+            <li><strong>[대사]</strong> Kim, D. H., et al. (2000). <em>Biol. Pharm. Bull.</em> (장내 미생물 전환)</li>
+            <li><strong>[항염]</strong> Kim, S. J., et al. (2007). <em>Int. Immunopharmacol.</em> (항산화 및 항염증)</li>
+        </ol>
+    </div>
+
+    <div class="footer">
+        <p>Copyright © 2025 Rhapontigenin Project Team.</p>
+        <p>Optimized for Mobile Viewing.</p>
+    </div>
+</div>
+
+</body>
+</html>
